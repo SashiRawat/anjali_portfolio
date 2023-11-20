@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    /* Styles for the overall appearance of the page */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('path/to/background-image.jpg') fixed;
+      background-size: cover;
+      background-position: center;
+      transition: background-color 0.3s ease;
+      color: #333;
+    }
+
+    /* Dark theme styles */
+    body.dark-theme {
+      background-color: #1a1a1a;
+      color: #848484;
+    }
+
+    /* Styles for the header section */
+    header {
+      background-color: rgba(26, 26, 26, 0.8);
+      padding: 1em 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Styles for the main content section */
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+      animation: fadeInUp 1s ease;
+      border-radius: 10px;
+    }
+
+    /* Styles for headings */
+    h1, h2 {
+      color: #333;
+      opacity: 1; /* Initially set opacity to 0 */
+      transform: translateY(20px); /* Initially move down 20px */
+    }
+    /* Toggle transparancy */
+    #toggleSkills{
+        opacity: 0;
+    }
+
+    /* Styles for unordered lists */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Styles for list items */
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Styles for the footer section */
+    footer {
+      background-color: rgba(26, 26, 26, 0.8);
+      text-align: center;
+      padding: 1em 0;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    /* Styles for buttons */
+    button {
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    /* Styles for anchor buttons */
+    a.button {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background-color: #333;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Hover effect for anchor buttons */
+    a.button:hover {
+      background-color: #555;
+    }
+
+    /* Styles for the profile image container */
+    .profile-image-container {
+      position: relative;
+      width: 200px; /* Increased size */
+      height: 200px; /* Increased size */
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Added shadow for 3D effect */
+    }
+
+    /* Styles for the profile image */
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Styles for the foggy border effect */
+    .foggy-border::before {
+      content: '';
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      right: -5%;
+      bottom: -5%;
+      border: 10px solid rgba(255, 215, 0, 0.3); /* Foggy yellow border */
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    /* Media query for responsive layout */
+    @media (min-width: 768px) {
+      section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .profile-image-container {
+        margin-right: 20px;
+        margin-left: 0;
+      }
+    }
+
+    /* Keyframe animation for fading in content */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Anjali</h1>
+    <p>B.Com Final Year</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <section>
+    <!-- Profile Image Container with Foggy Border -->
+    <div class="profile-image-container foggy-border">
+      <img src="anjali.jpg" alt="Anjali" class="profile-image">
+    </div>
+
+    <!-- Student Information -->
+    <div>
+      <h2>About Me</h2>
+      <p>
+        I am a B.Com final year student passionate about finance and accounting. 
+        I have a strong foundation in principles of commerce and business management.
+      </p>
+
+      <h2>Education</h2>
+      <ul>
+        <li>Bachelor of Commerce: Kazi Nazrul University (2021-2024) </li>
+        <li>High School: Beachood School (2019-2021)</li>
+      </ul>
+
+      <h2>Skills <button id="toggleSkills">Toggle</button></h2>
+      <ul id="skillsList">
+        <li>Financial Analysis</li>
+        <li>Accounting Software (ASP INFOTECH)</li>
+        <li>Advance Excel</li>
+        <!-- Add more skills as needed -->
+      </ul>
+
+      <h2>Experience</h2>
+      <ul>
+        <li>certification in finance & accounts at ASP INFOTECH</li>
+        <li>data analytic at youth club</li>
+        <li>intern in Tally at ASP INFOTECH</li>
+        <!-- Add more projects as needed -->
+      </ul>
+
+      <!-- Download Resume Button -->
+      <a href="anjali_resume.pdf" class="button" download>Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2024 Anjali
+    <button id="toggleTheme">Toggle Theme</button>
+  </footer>
+
+  <!-- JavaScript for Interactivity -->
+  <script>
+    // JavaScript for toggling skills visibility
+    const toggleSkillsButton = document.getElementById('toggleSkills');
+    const skillsList = document.getElementById('skillsList');
+    toggleSkillsButton.addEventListener('click', () => {
+      skillsList.classList.toggle('hidden');
+    });
+
+    // JavaScript for toggling dark theme
+    const toggleThemeButton = document.getElementById('toggleTheme');
+    const body = document.body;
+    toggleThemeButton.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+    });
+  </script>
+
+</body>
+</html>
